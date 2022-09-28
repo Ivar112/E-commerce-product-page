@@ -1,0 +1,14 @@
+.main-img {
+    margin-bottom: $spacer * 2.125;
+    border-radius: $border-radius;
+}
+.preview-images {
+    display: flex;
+    justify-content: space-between;
+    max-width: 100%;
+    
+    .preview-img {
+        width: 20.5%;
+        border-radius: $border-radius * .75;
+    }
+}
