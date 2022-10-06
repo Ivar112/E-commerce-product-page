@@ -4,11 +4,28 @@ body {
     flex-direction: column;
     min-height: 100vh;
 
-    .container-md {
-        @include media-breakpoint-up (md) {
-            padding: 0 $spacer;
+    .main {
+        .content {
+            @include media-breakpoint-up(md) {
+                padding-top: $spacer * 4;
+            }
+
+            .pictures-col,
+            .info-col {
+                @include media-breakpoint-up(md) {
+                    padding: 0 $spacer * 4;
+                }
+            }
+
+            .pictures-col {
+                @include media-breakpoint-up(sm) {
+                    margin-bottom: $spacer * 4;
+                }
+                @include media-breakpoint-up(lg) {
+                    margin-bottom: 0;
+                }
+            }
         }
-        padding: 0;
     }
 }
 

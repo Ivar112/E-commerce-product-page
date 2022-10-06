@@ -1,7 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
 
 $font-family-base: 'Kumbh Sans', sans-serif;
+$font-size-base: 1rem;
+$font-weight-base: 400;
+$font-weight-bold: 700;
+
 $spacer: 1rem;
+$grid-gutter-width: 3rem;
 
 $primary: hsl(26, 100%, 55%);
+$pale-orange: hsl(25, 100%, 94%);
+
+$headings-color: hsl(220, 13%, 13%);
+$text-color: hsl(219, 9%, 45%);
+$border-color: hsl(255, 9%, 91%);
+$gray: hsl(220, 14%, 75%);
+$light-gray: hsl(223, 64%, 98%);
+$white: hsl(0, 0%, 100%);
+$black: hsl(0, 0%, 0%);
+
 $border-radius: $spacer;
+$border-radius-sm: $spacer * .5;
+
+$input-btn-padding-y: .875rem;
+$input-btn-padding-x: 2rem;
+$btn-border-radius: $border-radius-sm;
+$btn-link-hover-color: $white;

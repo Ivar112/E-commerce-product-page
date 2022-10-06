@@ -1,14 +1,166 @@
-.main-img {
-    margin-bottom: $spacer * 2.125;
-    border-radius: $border-radius;
+.pictures-col {
+    .main-img {
+        margin-bottom: $spacer * 2.125;
+        max-width: 100vw;
+        margin-inline: calc(50% - 50vw);
+        
+        @include media-breakpoint-up(sm) {
+            margin-inline: 0;
+            max-width: 100%;
+            border-radius: $border-radius;
+        }
+    }
+    .preview-images {
+        display: flex;
+        justify-content: space-between;
+        max-width: 100%;
+        
+        .preview-img-wrapper {
+            width: 20.5%;
+            border-radius: $border-radius * .75;
+            margin: 0;
+            overflow: hidden;
+            cursor: pointer;
+            &.active {
+                border: 2px solid $primary;
+                .preview-img {
+                    opacity: .4;
+                }
+            }
+
+            .preview-img {
+                max-width: 100%;
+                pointer-events: none;
+            }
+        }
+    }
 }
-.preview-images {
+
+.info-col {
     display: flex;
-    justify-content: space-between;
-    max-width: 100%;
+    flex-direction: column;
+    justify-content: center;
+
+    h1 {
+        color: $headings-color;
+        font-weight: $font-weight-bold;
+        margin-bottom: $spacer * 2.25;
+    }
     
-    .preview-img {
-        width: 20.5%;
-        border-radius: $border-radius * .75;
+    h2 {
+        color: $primary;
+        font-weight: $font-weight-bold;
+        text-transform: uppercase;
+        font-size: $font-size-base * .875;
+        letter-spacing: 1px;
+        margin-bottom: $spacer;
+    }
+
+    p {
+        color: $text-color;
+    }
+
+    .price-wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: ($spacer * .75);
+        
+        @media (min-width: 420px) {
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 0;
+        }
+
+        .price-discount-wrapper {
+            display: flex;
+            align-items: center;
+            .price {
+                color: $headings-color;
+                font-weight: $font-weight-bold;
+                font-size: $font-size-base * 1.75;
+                margin: 0 ($spacer * .75) ($spacer * .125) 0; 
+            }
+            .discount {
+                color: $primary;
+                font-weight: $font-weight-bold;
+                display: inline-block;
+                padding: 1px ($spacer * .5);
+                background-color: $pale-orange;
+                border-radius: $border-radius * .25;
+            }
+        }
+
+        .discount-price {
+            color: $gray;
+            font-weight: $font-weight-bold;
+            position: relative;
+            width: fit-content;
+            margin-left: auto;
+    
+            @media (min-width: 420px) {
+                margin-left: 0;
+                margin-bottom: $spacer * 2;
+            }
+            
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: 9px;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                border-bottom: 1px solid $gray;
+            }
+        }
+    }
+
+    .counter-btn-wrapper {
+        @media(min-width: 420px) {
+            display: flex;
+        }
+        gap: $spacer;
+
+        .counter {
+            width: 100%;
+            height: 55px;
+            background-color: $light-gray;
+            border-radius: $border-radius-sm;
+            display: flex;
+            align-items: center;
+            margin-bottom: $spacer;
+
+            @media (min-width: 420px) {
+                margin-bottom: 0;
+                width: 160px;
+            }
+
+            .minus {
+                margin-right: auto;
+                padding: $spacer;
+                &:hover {
+                    cursor: pointer;
+                }
+                svg {
+                    margin-top: $spacer * .75;
+                    vertical-align: super;
+                }
+            }
+            .count {
+                margin: 0 auto;
+                user-select: none;
+            }
+            .plus {
+                margin-left: auto;
+                padding: $spacer;
+
+                &:hover {
+                    cursor: pointer;
+                }
+                svg {
+                    vertical-align: unset;
+                }
+            }
+        }
     }
 }

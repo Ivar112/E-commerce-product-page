@@ -1,0 +1,21 @@
+.btn {
+    &-primary {
+        color: $white;
+
+        &:hover {
+            color: $white !important; 
+        }
+    }
+
+    &-add {
+        flex-grow: 1;
+        svg {
+            transform: scale(.8);
+            vertical-align: sub;
+        }
+        width: 100%;
+        @media (min-width: 420px) {
+            width: initial;
+        }
+    }
+}
