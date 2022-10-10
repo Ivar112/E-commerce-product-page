@@ -21,7 +21,7 @@
             margin: 0;
             overflow: hidden;
             cursor: pointer;
-            &.active {
+            &.swiper-slide-thumb-active {
                 border: 2px solid $primary;
                 .preview-img {
                     opacity: .4;
@@ -30,7 +30,6 @@
 
             .preview-img {
                 max-width: 100%;
-                pointer-events: none;
             }
         }
     }
@@ -44,7 +43,10 @@
     h1 {
         color: $headings-color;
         font-weight: $font-weight-bold;
-        margin-bottom: $spacer * 2.25;
+        margin-bottom: $spacer;
+        @include media-breakpoint-up(sm) {
+            margin-bottom: $spacer * 2.25;
+        }
     }
     
     h2 {

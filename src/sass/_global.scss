@@ -9,6 +9,7 @@ body {
             @include media-breakpoint-up(md) {
                 padding-top: $spacer * 4;
             }
+            margin-bottom: $spacer * 2;
 
             .pictures-col,
             .info-col {
@@ -27,9 +28,13 @@ body {
             }
         }
     }
+    .attribution {
+        padding: ($spacer * .5) ($grid-gutter-width * .5);
+        margin-top: auto;
+        a {
+            color: $primary;
+        }
+    }
 }
 
-.attribution {
-    margin-top: auto;
-}
 
