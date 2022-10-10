@@ -157,10 +157,15 @@
     var addCart = document.getElementById("add-cart");
     var iconCounter = document.getElementById("cart-icon-counter"),
     count = 0;
+    
     add.addEventListener("click", function() {
       count += 1;
       counter.innerHTML = count;
     });
+    add.addEventListener('mousedown', function(e) 
+      { e.preventDefault(); 
+    }, false);
+
     subtract.addEventListener("click", function() {
       if (count === 0){
         count = count;
@@ -169,6 +174,10 @@
       }
       counter.innerHTML = count;
     });
+    subtract.addEventListener('mousedown', function(e) 
+      { e.preventDefault(); 
+    }, false);
+
     addCart.addEventListener("click", function() {
       iconCounter.style.display = 'flex';
       iconCounter.innerHTML = count;
