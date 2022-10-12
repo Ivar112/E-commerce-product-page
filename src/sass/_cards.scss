@@ -13,6 +13,7 @@
         width: calc(100% - #{$spacer});
         margin: 0 auto;
         transition: all 0.1s ease-in-out;
+        display: flex;
 
         @include media-breakpoint-up(md) {
             top: 92px;
@@ -27,20 +28,54 @@
 
         &.show {
             min-height: 240px;
-            height: 100%;
+            height: fit-content;
             opacity: 1;
         }
 
         &.empty {
             font-weight: $font-weight-bold;
             .card-body {
-                display: flex;
                 align-items: center;
                 justify-content: center;
+                .empty-message {
+                    display: inline-block;
+                }
+                .cart-content {
+                    display: none;
+                }
+                .btn-checkout {
+                    display: none;
+                }
             }
         }
     }
     &-body {
         color: $text-color;
+        display: flex;
+        flex-direction: column;
+
+        .empty-message {
+            display: none;
+        }
+        .cart-content {
+            display: flex;
+            img {
+                height: 45px;
+                width: 45px;
+                border-radius: 5px;
+                margin-right: $spacer * .75;
+            }
+            #total {
+                font-weight: $font-weight-bold;
+            }
+            #delete {
+                padding-top: 10px;
+                cursor: pointer;
+            }
+            margin-bottom: $spacer * 1.25;
+        }
+    }
+    &-header {
+        font-weight: $font-weight-bold;
     }
 }
