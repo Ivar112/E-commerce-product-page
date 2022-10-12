@@ -34,6 +34,11 @@
           </svg>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
+          <div class="close">
+            <svg width="14" height="15" xmlns="http://www.w3.org/2000/svg">
+              <path d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z" fill="#69707D" fill-rule="evenodd"/>
+            </svg>
+          </div>
           <ul class="navbar-nav">
             <li class="nav-item">
               <a class="nav-link" aria-current="page" href="#">Collections</a>
@@ -151,6 +156,8 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
   <script>
 
+    //shopping cart
+
     var add = document.getElementById("plus");
     var subtract = document.getElementById("minus");
     var counter = document.getElementById("count");
@@ -182,10 +189,21 @@
       iconCounter.style.display = 'flex';
       iconCounter.innerHTML = count;
     });
+
+    // menu
+
+    document.getElementsByClassName("navbar-toggler")[0].addEventListener("click", function() {
+      document.body.classList.add("menu-open");
+    });
+    document.getElementsByClassName("close")[0].addEventListener("click", function() {
+      document.body.classList.remove("menu-open");
+    });
+
+    // Swiper
     
     var swiper = new Swiper(".mySwiper", {
         loop: false,
-        spaceBetween: 36,
+        spaceBetween: 32,
         slidesPerView: 4,
         freeMode: false,
         watchSlidesProgress: true,
