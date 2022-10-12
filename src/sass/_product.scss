@@ -16,6 +16,35 @@
             border-radius: $border-radius;
         }
     }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        background-color: $white;
+        border-radius: 50%;
+        height: 35px;
+        width: 35px;
+        &::after {
+            content: "";
+        }
+        svg {
+            transform: scale(.8);
+        }
+        @include media-breakpoint-up(sm) {
+            display: none;
+        }
+    }
+
+    .swiper-button-next {
+        svg {
+            margin-left: 3px;
+        }
+    }
+    .swiper-button-prev {
+        svg {
+            margin-right: 3px;
+        }
+    }
+
     .preview-images {
         display: flex;
         justify-content: space-between;

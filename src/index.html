@@ -88,6 +88,16 @@
                 <img src="./images/image-product-4.jpg" class="img-fluid main-img"/>
               </div>
             </div>
+            <div class="swiper-button-next">
+              <svg width="13" height="18" xmlns="http://www.w3.org/2000/svg">
+                <path d="m2 1 8 8-8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd"/>
+              </svg>
+            </div>
+            <div class="swiper-button-prev">            
+              <svg width="12" height="18" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11 1 3 9l8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd"/>
+              </svg>
+            </div>
           </div>
           <!-- thumbnails -->
           <div thumbsSlider="" class="swiper mySwiper d-sm-flex d-none" >
@@ -205,12 +215,15 @@
         loop: false,
         spaceBetween: 32,
         slidesPerView: 4,
-        freeMode: false,
         watchSlidesProgress: true,
       });
       var swiper2 = new Swiper(".mySwiper2", {
-        loop: false,
+        loop: true,
         spaceBetween: 10,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
         thumbs: {
           swiper: swiper,
         },
