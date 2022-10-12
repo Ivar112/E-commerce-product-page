@@ -1,5 +1,8 @@
 .header {
-    position: relative;
+    position: sticky;
+    top: 0;
+    z-index: 4;
+    background-color: $white;
     .navbar {
         padding: $spacer 0 ($spacer * 1.25) 0;
         justify-content: flex-start;
