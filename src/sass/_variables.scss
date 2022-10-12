@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
 
+$variable-prefix:             bs-; // Deprecated in v5.2.0 for the shorter `$prefix`
+$prefix:                      $variable-prefix;
+
 $font-family-base: 'Kumbh Sans', sans-serif;
 $font-size-base: 1rem;
 $font-weight-base: 400;
@@ -26,3 +29,22 @@ $input-btn-padding-y: .875rem;
 $input-btn-padding-x: 2rem;
 $btn-border-radius: $border-radius-sm;
 $btn-link-hover-color: $white;
+
+$border-width:                      1px;
+$card-spacer-y:                     $spacer * 1.25;
+$card-spacer-x:                     $spacer * 1.5;
+$card-title-spacer-y:               $spacer * .5;
+$card-border-width:                 $border-width;
+$card-border-color:                 $border-color;
+$card-border-radius:                $border-radius * .5;
+$card-box-shadow:                   0px 14px 22px 0px rgba($black,0.2);
+$card-inner-border-radius:          subtract($card-border-radius, $card-border-width);
+$card-cap-padding-y:                $card-spacer-y * 1.125;
+$card-cap-padding-x:                $card-spacer-x;
+$card-cap-bg:                       $white;
+$card-cap-color:                    null;
+$card-height:                       null;
+$card-color:                        null;
+$card-bg:                           $white;
+$card-img-overlay-padding:          $spacer;
+$card-group-margin:                 $grid-gutter-width * .5;

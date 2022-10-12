@@ -60,11 +60,17 @@
                 border: 2px solid $primary;
                 .preview-img {
                     opacity: .4;
+                    &:hover {
+                        opacity: .4;
+                    }
                 }
             }
 
             .preview-img {
                 max-width: 100%;
+                &:hover {
+                    opacity: .7;
+                }
             }
         }
     }
@@ -177,6 +183,9 @@
                 padding: $spacer;
                 &:hover {
                     cursor: pointer;
+                    use {
+                        fill: lighten($primary, 10%);
+                    }
                 }
                 svg {
                     margin-top: $spacer * .75;
@@ -193,6 +202,9 @@
 
                 &:hover {
                     cursor: pointer;
+                    use {
+                        fill: lighten($primary, 10%);
+                    }
                 }
                 svg {
                     vertical-align: unset;
