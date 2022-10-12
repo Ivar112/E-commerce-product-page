@@ -5,12 +5,14 @@
         border: none;
         box-shadow: $card-box-shadow;
         min-height: 0px;
+        height: 0;
         opacity: 0;
         top: 88px;
         left: 0;
         right: 0;
         width: calc(100% - #{$spacer});
         margin: 0 auto;
+        transition: all 0.1s ease-in-out;
 
         @include media-breakpoint-up(md) {
             top: 92px;
@@ -25,6 +27,7 @@
 
         &.show {
             min-height: 240px;
+            height: 100%;
             opacity: 1;
         }
 
