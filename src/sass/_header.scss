@@ -35,7 +35,6 @@
             padding: $grid-gutter-width * .5;
             transform: translateX(-100%);
             transition: $transition-base;
-            
             .menu-open & {
                 transform: translateX(0);
             }
