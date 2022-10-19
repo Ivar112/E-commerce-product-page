@@ -15,15 +15,18 @@
         transition: all 0.1s ease-in-out;
         display: flex;
 
-        @include media-breakpoint-up(md) {
-            top: 92px;
-        }
-
         @include media-breakpoint-up(sm) {
             width: 350px;
             top: 75px;
             left: unset;
-            right: $grid-gutter-width;
+            right: $spacer * 2;
+        }
+        @include media-breakpoint-up(md) {
+            top: 88px;
+            right: 0;
+        }
+        @include media-breakpoint-up(xl) {
+            right: -$grid-gutter-width;
         }
 
         &.show {

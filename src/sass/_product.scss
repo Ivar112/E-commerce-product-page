@@ -74,6 +74,23 @@
             }
         }
     }
+
+    .lightbox {
+        position: fixed;
+        font-size: $font-size-base * 5;
+        color: $white;
+        height: 100vh;
+        width: 100vw;
+        left: 0;
+        top: 0;
+        position: fixed;
+        background-color: rgba($black, .75);
+        z-index: 999;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 .info-col {

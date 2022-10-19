@@ -204,40 +204,40 @@
     var total = document.getElementById("total");
     var deleteItems = document.getElementById("delete");
     var iconCounter = document.getElementById("cart-icon-counter"),
-    count1 = 1;
-    count = 0;
+    count = 1;
+    countTotal = 0;
     
     add.addEventListener("click", function() {
-      count1 += 1;
-      counter.innerHTML = count1;
+      count += 1;
+      counter.innerHTML = count;
     });
     add.addEventListener('mousedown', function(e) 
       { e.preventDefault(); 
     }, false);
 
     subtract.addEventListener("click", function() {
-      if (count1 === 0){
-        count1 = count1;
+      if (count === 0){
+        count = count;
       } else {
-        count1 -= 1;
+        count -= 1;
       }
-      counter.innerHTML = count1;
+      counter.innerHTML = count;
     });
     subtract.addEventListener('mousedown', function(e) 
       { e.preventDefault(); 
     }, false);
 
     addCart.addEventListener("click", function() {
-      count = count + count1;
+      countTotal = countTotal + count;
       iconCounter.style.display = 'flex';
-      iconCounter.innerHTML = count;
-      if (count > 0) {
+      iconCounter.innerHTML = countTotal;
+      if (countTotal > 0) {
         cart.classList.remove("empty");
       }
-      amount.innerHTML = count;
-      total.innerHTML = ' $' + count * 125;
-      count1 = 1;
-      counter.innerHTML = count1;
+      amount.innerHTML = countTotal;
+      total.innerHTML = ' $' + countTotal * 125;
+      count = 1;
+      counter.innerHTML = count;
     });
 
     cartIcon.addEventListener("click", function() {
@@ -247,8 +247,18 @@
       { e.preventDefault(); 
     }, false);
 
+    document.addEventListener('click', event => {
+    const isClickInside = cart.contains(event.target)
+    const isClickCartIcon = cartIcon.contains(event.target);
+
+      if (!isClickCartIcon && !isClickInside) {
+        cart.classList.remove("show");
+      }
+    })
+
+
     deleteItems.addEventListener("click", function() {
-      count = 0;
+      countTotal = 0;
       cart.classList.add("empty");
       iconCounter.innerHTML = count;
       iconCounter.style.display = 'none';
