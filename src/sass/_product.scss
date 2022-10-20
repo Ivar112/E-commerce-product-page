@@ -15,7 +15,10 @@
             border-radius: $border-radius;
         }
         @include media-breakpoint-up(lg) {
-            cursor: pointer;
+            cursor: zoom-in;
+        }
+        .lightbox-show & {
+            cursor: default;
         }
     }
 

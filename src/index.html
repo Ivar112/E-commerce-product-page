@@ -154,24 +154,28 @@
                   <img
                     src="./images/image-product-1.jpg"
                     class="img-fluid main-img"
+                    data-index-number="0"
                   />
                 </div>
                 <div class="swiper-slide">
                   <img
                     src="./images/image-product-2.jpg"
                     class="img-fluid main-img"
+                    data-index-number="1"
                   />
                 </div>
                 <div class="swiper-slide">
                   <img
                     src="./images/image-product-3.jpg"
                     class="img-fluid main-img"
+                    data-index-number="2"
                   />
                 </div>
-                <div class="swiper-slide">
+                <div class="swiper-slide" data-number="3">
                   <img
                     src="./images/image-product-4.jpg"
                     class="img-fluid main-img"
+                    data-index-number="3"
                   />
                 </div>
               </div>
@@ -510,6 +514,25 @@
       for (var i = 0; i < mainImg.length; i++) {
         mainImg[i].onclick = function () {
           document.body.classList.add("lightbox-show");
+          var initialSlide = parseInt(this.dataset.indexNumber);
+          var lightboxThumbnails = new Swiper(".lightbox-swiper-thumbs", {
+          loop: false,
+          spaceBetween: 32,
+          slidesPerView: 4,
+          watchSlidesProgress: true,
+          });
+          var lightboxSwiper = new Swiper(".lightbox-swiper", {
+            loop: true,
+            spaceBetween: 10,
+            initialSlide: initialSlide,
+            navigation: {
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            },
+            thumbs: {
+              swiper: lightboxThumbnails
+            },
+          });
         };
       }
 
@@ -534,24 +557,6 @@
         },
         thumbs: {
           swiper: mainThumbnails
-        },
-      });
-
-      var lightboxThumbnails = new Swiper(".lightbox-swiper-thumbs", {
-        loop: false,
-        spaceBetween: 32,
-        slidesPerView: 4,
-        watchSlidesProgress: true,
-      });
-      var lightboxSwiper = new Swiper(".lightbox-swiper", {
-        loop: true,
-        spaceBetween: 10,
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-        thumbs: {
-          swiper: lightboxThumbnails
         },
       });
       
