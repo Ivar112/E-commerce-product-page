@@ -148,7 +148,7 @@
         <div class="row">
           <div class="col-lg-6 pictures-col">
             <!-- main image -->
-            <div class="swiper mySwiper">
+            <div class="swiper main-swiper">
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
                   <img
@@ -199,7 +199,7 @@
               </div>
             </div>
             <!-- thumbnails -->
-            <div thumbsSlider="" class="swiper swiper-thumbs d-sm-flex d-none">
+            <div thumbsSlider="" class="swiper main-swiper-thumbs d-sm-flex d-none">
               <div class="swiper-wrapper preview-images" id="#previewImages">
                 <div class="swiper-slide preview-img-wrapper">
                   <img
@@ -238,7 +238,7 @@
                     />
                   </svg>
                 </div>
-                <div class="swiper mySwiper">
+                <div class="swiper lightbox-swiper">
                   <div class="swiper-wrapper">
                     <div class="swiper-slide">
                       <img
@@ -299,7 +299,7 @@
                 <!-- thumbnails -->
                 <div
                   thumbsSlider=""
-                  class="swiper swiper-thumbs d-sm-flex d-none"
+                  class="swiper lightbox-swiper-thumbs d-sm-flex d-none"
                 >
                   <div class="swiper-wrapper preview-images" id="#previewImages">
                     <div class="swiper-slide preview-img-wrapper">
@@ -519,31 +519,42 @@
 
       // Swiper
 
-      const myCustomSlider = document.querySelectorAll(".mySwiper");
-      const myCustomGalleryThumbs = document.querySelectorAll(".swiper-thumbs");
+      var mainThumbnails = new Swiper(".main-swiper-thumbs", {
+        loop: false,
+        spaceBetween: 32,
+        slidesPerView: 4,
+        watchSlidesProgress: true,
+      });
+      var mainSwiper = new Swiper(".main-swiper", {
+        loop: true,
+        spaceBetween: 10,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        thumbs: {
+          swiper: mainThumbnails
+        },
+      });
 
-      for (i = 0; i < myCustomSlider.length; i++) {
-        myCustomSlider[i].classList.add("mySwiper-" + i);
-        myCustomGalleryThumbs[i].classList.add("swiper-thumbs-" + i);
-
-        var thumbnails = new Swiper(".swiper-thumbs-" + i , {
-          loop: false,
-          spaceBetween: 32,
-          slidesPerView: 4,
-          watchSlidesProgress: true,
-        });
-        var swiper = new Swiper(".mySwiper-" + i , {
-          loop: true,
-          spaceBetween: 10,
-          navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-          },
-          thumbs: {
-            swiper: thumbnails
-          },
-        });
-      }
+      var lightboxThumbnails = new Swiper(".lightbox-swiper-thumbs", {
+        loop: false,
+        spaceBetween: 32,
+        slidesPerView: 4,
+        watchSlidesProgress: true,
+      });
+      var lightboxSwiper = new Swiper(".lightbox-swiper", {
+        loop: true,
+        spaceBetween: 10,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        thumbs: {
+          swiper: lightboxThumbnails
+        },
+      });
+      
     </script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
